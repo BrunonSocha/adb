@@ -8,7 +8,7 @@
 -- Zadanie 1
 -- =============================================
 SELECT * FROM SalesLT.Customer WHERE LastName LIKE 'b%';
-GO
+GO test
 
 -- =============================================
 -- Zadanie 2
