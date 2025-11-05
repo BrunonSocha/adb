@@ -8,7 +8,7 @@
 -- Zadanie 1
 -- =============================================
 SELECT * FROM SalesLT.Customer WHERE LastName LIKE 'b%';
-GO test
+GO
 
 -- =============================================
 -- Zadanie 2
@@ -49,7 +49,13 @@ INSERT INTO SalesLT.ProductCategory (Name) VALUES ('Special-B'),('Extra-1');
 GO
 
 -- =============================================
--- Zadanie 7
+-- Zadanie 8
 -- =============================================
-CREATE TABLE IF NOT EXISTS SalesLT.ProductsCategoriesY (NVARCHAR(30) Name NOT NULL, INT ProductNumber NOT NULL, ProductCategory PRIMARY KEY, NVARCHAR(6) OwnerId DEFAULT '233861');
+SELECT p.Name, p.ProductNumber, pc.Name AS ProductCategory, '233861' AS OwnerId, INTO SalesLT.ProductCategories233861 FROM SalesLT.Product AS p JOIN SalesLT.ProductCategory AS pc ON p.ProductCategoryID = pc.ProductCategoryID WHERE (p.Name LIKE "B%B") OR pc.Name LIKE "%B%";
+GO
+
+-- =============================================
+-- Zadanie 9
+-- =============================================
+SELECT ProductCategory, COUNT(ProductCategory) AS ProductCount FROM SalesLT.ProductCategories233861 GROUP BY ProductCategory;
 GO
