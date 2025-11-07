@@ -51,7 +51,7 @@ GO
 -- =============================================
 -- Zadanie 8
 -- =============================================
-SELECT p.Name, p.ProductNumber, pc.Name AS ProductCategory, '233861' AS OwnerId, INTO SalesLT.ProductCategories233861 FROM SalesLT.Product AS p JOIN SalesLT.ProductCategory AS pc ON p.ProductCategoryID = pc.ProductCategoryID WHERE (p.Name LIKE "B%B") OR pc.Name LIKE "%B%";
+SELECT p.Name, p.ProductNumber, pc.Name AS ProductCategory, '233861' AS OwnerId INTO SalesLT.ProductCategories233861 FROM SalesLT.Product AS p JOIN SalesLT.ProductCategory AS pc ON p.ProductCategoryID = pc.ProductCategoryID WHERE (p.Name LIKE 'B%B') OR pc.Name LIKE '%B%';
 GO
 
 -- =============================================
